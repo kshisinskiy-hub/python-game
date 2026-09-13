@@ -1,3 +1,4 @@
+
 #  Алхимический Рынок (Alchemy Craft & Trade) — ЛР №1
 
 Учебный проект 2D-игры в жанре логического крафтинга, разработанный на языке Python с использованием библиотеки Pygame.
@@ -23,20 +24,21 @@ python-game/
 ## Скриншоты игры</h1>
 
 <h3>Базовое состояние игры</h3>
-<img width="596" height="475" alt="Screenshot_7" src="https://github.com/user-attachments/assets/17a3fcda-c930-4a2e-8d59-7b35d6aaa23f" />
+<img width="599" height="477" alt="Screenshot_14" src="https://github.com/user-attachments/assets/1cd67048-a0d7-4f6f-9db9-bc16d4c655de" />
+
 
 <h3>Создание энергии из огня и воздуха</h3>
-<img width="596" height="472" alt="Screenshot_10" src="https://github.com/user-attachments/assets/c6e4057b-8409-4021-b948-226eb9e5d3be" />
+<img width="599" height="476" alt="Screenshot_2" src="https://github.com/user-attachments/assets/3025870a-fef2-4899-8e5a-1be83d0b56f5" />
 
 <h3>Создание грязи из воды и земли</h3>
-<img width="596" height="478" alt="Screenshot_11" src="https://github.com/user-attachments/assets/51e97b7a-fdbd-4e73-bff8-d31d7a101859" />
+<img width="598" height="473" alt="Screenshot_5" src="https://github.com/user-attachments/assets/a5e3fd24-79c1-4aec-a9ce-038d3fac45ed" />
 
 <h3>Создание пара из огня и воды</h3>
-<img width="593" height="471" alt="Screenshot_6" src="https://github.com/user-attachments/assets/e0e78b77-53be-42de-92ed-224c14161e04" />
+<img width="596" height="470" alt="Screenshot_1" src="https://github.com/user-attachments/assets/6c76e628-56bb-4422-9dc9-69e1e5419906" />
 
 <h3>Создание лавы из огня и земли</h3>
-<img width="597" height="466" alt="Screenshot_12" src="https://github.com/user-attachments/assets/7812f76f-fbd7-4216-902e-3a18a0a3826b" />
+<img width="600" height="469" alt="Screenshot_3" src="https://github.com/user-attachments/assets/3f893147-e9cf-4ec6-a0f5-289d327a3e98" />
 
 <h3>Создание дождя из воды и воздуха</h3>
-<img width="601" height="470" alt="Screenshot_13" src="https://github.com/user-attachments/assets/568004ad-fabf-4d0d-87a2-fb41d70582de" />
+<img width="598" height="474" alt="Screenshot_4" src="https://github.com/user-attachments/assets/c52610ca-7fe1-48bf-8914-0a1bd154d913" />
 
