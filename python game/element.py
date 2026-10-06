@@ -42,15 +42,5 @@ class Element:
 
         # 2. Подпись под картинкой
         text_surf = self.font.render(self.name, True, TEXT_COLOR)
-        text_rect = text_surf.get_rect(
-            center=(self.rect.centerx, self.rect.bottom + 10)
-        )
-
-        # Темный фон под текстом
-        bg_rect = text_rect.inflate(8, 4)
-        pygame.draw.rect(surface, (20, 20, 20), bg_rect, border_radius=4)
-        pygame.draw.rect(
-            surface, ELEMENT_BORDER, bg_rect, width=1, border_radius=4
-        )
-
+        text_rect = text_surf.get_rect(center=self.rect.center)
         surface.blit(text_surf, text_rect)

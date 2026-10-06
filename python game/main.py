@@ -1,6 +1,15 @@
 import sys
+import time
 import pygame
-from constants import BG_COLOR, FPS, HEIGHT, RECIPES, WIDTH
+from constants import (
+    BG_COLOR,
+    FPS,
+    HEIGHT,
+    INITIAL_ELEMENTS_CONFIG,
+    RECIPES,
+    WIDTH,
+)
+from data_manager import log_event, save_session_stats
 from element import Element
 
 
@@ -11,7 +20,15 @@ def try_craft(elem1, elem2, font):
     if result_type:
         new_x = (elem1.rect.x + elem2.rect.x) // 2
         new_y = (elem1.rect.y + elem2.rect.y) // 2
+        # Логируем крафт элемента
+        log_event(
+            f"Успешный крафт: {elem1.type_id} + {elem2.type_id} = {result_type}"
+        )
         return Element(result_type, new_x, new_y, font)
+
+    log_event(
+        f"Неудачная попытка скрещивания: {elem1.type_id} и {elem2.type_id}"
+    )
     return None
 
 
@@ -22,11 +39,14 @@ def main():
     clock = pygame.time.Clock()
     font = pygame.font.SysFont("Arial", 16, bold=True)
 
+    log_event("Запуск игрового сеанса.")
+    start_time = time.time()
+    crafted_count = 0
+
+    # Создаем стартовые элементы из загруженной конфигурации JSON
     elements = [
-        Element("fire", 100, 100, font),
-        Element("water", 220, 100, font),
-        Element("earth", 340, 100, font),
-        Element("air", 460, 100, font),
+        Element(item["type"], item["x"], item["y"], font)
+        for item in INITIAL_ELEMENTS_CONFIG
     ]
 
     active_element = None
@@ -48,6 +68,7 @@ def main():
                             active_element = elem
                             elements.remove(elem)
                             elements.append(elem)
+                            log_event(f"Захвачен элемент: {elem.type_id}")
                             break
 
             elif event.type == pygame.MOUSEMOTION:
@@ -69,6 +90,7 @@ def main():
                                     elements.remove(active_element)
                                     elements.remove(other)
                                     elements.append(new_elem)
+                                    crafted_count += 1
                                 break
                     active_element = None
 
@@ -78,6 +100,13 @@ def main():
 
         pygame.display.flip()
         clock.tick(FPS)
+
+    # Завершение сессии и сохранение рекордов
+    total_time = time.time() - start_time
+    log_event(
+        f"Завершение игры. Создано элементов: {crafted_count}, Время: {round(total_time, 1)}s"
+    )
+    save_session_stats("Алхимик_1", crafted_count, total_time)
 
     pygame.quit()
     sys.exit()

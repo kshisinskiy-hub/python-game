@@ -1,3 +1,5 @@
+from data_manager import load_game_config
+
 WIDTH, HEIGHT = 800, 600
 FPS = 60
 
@@ -5,22 +7,25 @@ BG_COLOR = (30, 30, 40)
 TEXT_COLOR = (255, 255, 255)
 ELEMENT_BORDER = (120, 120, 160)
 
-RECIPES = {
-    tuple(sorted(("fire", "water"))): "steam",
-    tuple(sorted(("fire", "earth"))): "lava",
-    tuple(sorted(("water", "earth"))): "mud",
-    tuple(sorted(("air", "fire"))): "energy",
-    tuple(sorted(("air", "water"))): "rain",
-}
+# Загружаем данные из JSON при старте приложения
+config_data = load_game_config()
+
+# Преобразуем строковые ключи в отсортированные кортежи
+RECIPES = {}
+for key, result in config_data.get("recipes", {}).items():
+    ingredients = tuple(sorted(key.split("+")))
+    RECIPES[ingredients] = result
+
+INITIAL_ELEMENTS_CONFIG = config_data.get("initial_elements", [])
 
 ELEMENT_DATA = {
-    "fire": {"name": "Огонь", "color": (230, 80, 50)},
-    "water": {"name": "Вода", "color": (50, 120, 230)},
-    "earth": {"name": "Земля", "color": (120, 80, 40)},
-    "air": {"name": "Воздух", "color": (150, 200, 230)},
-    "steam": {"name": "Пар", "color": (200, 200, 220)},
-    "lava": {"name": "Лава", "color": (255, 100, 0)},
-    "mud": {"name": "Грязь", "color": (100, 70, 50)},
-    "energy": {"name": "Энергия", "color": (255, 220, 50)},
-    "rain": {"name": "Дождь", "color": (80, 160, 240)},
+    "fire": {"name": "Огонь"},
+    "water": {"name": "Вода"},
+    "earth": {"name": "Земля"},
+    "air": {"name": "Воздух"},
+    "steam": {"name": "Пар"},
+    "lava": {"name": "Лава"},
+    "mud": {"name": "Грязь"},
+    "energy": {"name": "Энергия"},
+    "rain": {"name": "Дождь"},
 }
