@@ -1,0 +1,31 @@
+{
+  "initial_elements": [
+    {
+      "type": "fire",
+      "x": 100,
+      "y": 100
+    },
+    {
+      "type": "water",
+      "x": 220,
+      "y": 100
+    },
+    {
+      "type": "earth",
+      "x": 340,
+      "y": 100
+    },
+    {
+      "type": "air",
+      "x": 460,
+      "y": 100
+    }
+  ],
+  "recipes": {
+    "fire+water": "steam",
+    "earth+fire": "lava",
+    "earth+water": "mud",
+    "air+fire": "energy",
+    "air+water": "rain"
+  }
+}
