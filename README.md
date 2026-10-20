@@ -17,6 +17,15 @@
 python-game/
 │
 ├── assets/                # Папка с PNG иконками
+├── py_bot/                # Папка с Telegram-ботом
+│   ├── bot.py             # Точка входа, хендлеры команд/callback, FSM
+│   ├── session.py         # Stateless JSON-сессии по user_id (sessions/<id>.json)
+│   ├── analytics.py       # Парсинг данных, рекорды, статистика, ачивки, верификация
+│   ├── keyboards.py       # Инлайн-клавиатуры главного меню и управления
+│   ├── config.py          # Токен бота, пути, параметры логирования
+│   ├── requirements.txt   # Зависимости бота
+│   └── sessions/          # Директория изолированных сессий пользователей
+│
 ├── recipes.json           # Структура рецептов и стартовых элементов (JSON)
 ├── game_flight.log        # Автоматически создаваемый лог событий (LOG/TXT)
 ├── session_stats.csv      # Таблица рекордов и сессий (CSV)
