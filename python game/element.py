@@ -19,7 +19,7 @@ class Element:
         self.offset_x = 0
         self.offset_y = 0
 
-        # Загрузка и подгонка картинки под размер 80x80
+        # Загрузка и подгонка картинки под размер 80x80    
         try:
             raw_image = pygame.image.load(
                 f"assets/{type_id}.png"
