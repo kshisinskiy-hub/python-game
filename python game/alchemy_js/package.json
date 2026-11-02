@@ -1,0 +1,10 @@
+{
+  "name": "alchemy_js",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Порт математического ядра игры Алхимия на JavaScript (ES6+)",
+  "main": "selftest.js",
+  "scripts": {
+    "test": "node selftest.js"
+  }
+}
