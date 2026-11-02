@@ -26,6 +26,7 @@ js_alchemy/                # ядро — только логика, без ин
     ├── element.js          # Element — FSM, расстояние Math.hypot, пороговое условие
     ├── data_manager.js     # DataManager — загрузка конфигурации из JSON с валидацией
     └── game_field.js       # GameField — игровое поле и менеджер рецептов крафта
+```
 ## Запуск
 
 Нужен только Node.js 18+ (без установки зависимостей).
@@ -36,8 +37,9 @@ cd js_alchemy
 # самопроверка (21 проверка: геометрия, математика, FSM, коллизии, JSON, крафт)
 node selftest.js
 ```
+## Результат выполнения проверок
+<img width="444" height="301" alt="Screenshot_19" src="https://github.com/user-attachments/assets/da2a1eeb-8cda-48d1-a8ae-ac1bcd3dca0d" />
 
-![Результат node selftest.js](screenshots/selftest.png)
 
 > **Про интерфейс.** В этой версии только ядро — без отрисовки и ввода:
 > его можно проверить целиком в консоли, без браузера.
