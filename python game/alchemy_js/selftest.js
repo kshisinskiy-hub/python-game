@@ -1,4 +1,3 @@
-// selftest.js
 import { Rect } from './js/rect.js';
 import { Element } from './js/element.js';
 import { STATE } from './js/constants.js';
