@@ -1,4 +1,4 @@
-# js_alchemy — ядро «Алхимического Рынка» на JavaScript
+# alchemy_js — ядро «Алхимического Рынка» на JavaScript
 
 Порт математического ядра игры «Алхимический Рынок» с Python/Pygame на **JavaScript (ES6+)**:
 те же сущности, та же система крафта, тот же конечный автомат — но без отрисовки,
@@ -15,7 +15,7 @@
 ## Структура
 
 ```text
-js_alchemy/                # ядро — только логика, без интерфейса
+alchemy_js/                # ядро — только логика, без интерфейса
 ├── package.json            # type: module — запуск ES-модулей в Node
 ├── recipes.json            # структура рецептов и стартовых элементов (JSON)
 ├── README.md
@@ -32,7 +32,7 @@ js_alchemy/                # ядро — только логика, без ин
 Нужен только Node.js 18+ (без установки зависимостей).
 
 ```bash
-cd js_alchemy
+cd alchemy_js
 
 # самопроверка (21 проверка: геометрия, математика, FSM, коллизии, JSON, крафт)
 node selftest.js
@@ -44,7 +44,7 @@ node selftest.js
 > **Про интерфейс.** В этой версии только ядро — без отрисовки и ввода:
 > его можно проверить целиком в консоли, без браузера.
 
-| Аспект | python-game (Python) | js_alchemy (JavaScript) |
+| Аспект | python-game (Python) | alchemy_js (JavaScript) |
 |---|---|---|
 | Модули | `from element import Element` | ES-модули `import … from './js/x.js'` |
 | Прямоугольники | `pygame.Rect` | собственный класс `Rect` (move/colliderect/collidepoint) |
