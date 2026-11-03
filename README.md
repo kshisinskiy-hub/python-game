@@ -14,26 +14,39 @@
 
 ##  Структура проекта
 ```text
-python-game/
+python-game/                          
 │
-├── assets/                # Папка с PNG иконками
-├── py_bot/                # Папка с Telegram-ботом
-│   ├── bot.py             # Точка входа, хендлеры команд/callback, FSM
-│   ├── session.py         # Stateless JSON-сессии по user_id (sessions/<id>.json)
-│   ├── analytics.py       # Парсинг данных, рекорды, статистика, ачивки, верификация
-│   ├── keyboards.py       # Инлайн-клавиатуры главного меню и управления
-│   ├── config.py          # Токен бота, пути, параметры логирования
-│   ├── requirements.txt   # Зависимости бота
-│   └── sessions/          # Директория изолированных сессий пользователей
+├── alchemy_js/                       # JS-ядро — только логика, без интерфейса
+│   ├── package.json                  # type: module — запуск ES-модулей в Node
+│   ├── README.md                     # Документация JS-ядра
+│   ├── recipes.json                  # Структура рецептов и стартовых элементов (JSON)
+│   ├── selftest.js                   # самопроверка: 21 проверка (node selftest.js)
+│   └── js/
+│       ├── constants.js              # параметры игры и FSM (названия элементов, STATE)
+│       ├── rect.js                   # Rect — порт возможностей pygame.Rect
+│       ├── element.js                # Element — FSM, Math.hypot, пороговое условие
+│       ├── data_manager.js           # DataManager — загрузка конфигурации из JSON с валидацией
+│       └── game_field.js             # GameField — игровое поле и менеджер рецептов крафта
 │
-├── recipes.json           # Структура рецептов и стартовых элементов (JSON)
-├── game_flight.log        # Автоматически создаваемый лог событий (LOG/TXT)
-├── session_stats.csv      # Таблица рекордов и сессий (CSV)
-├── constants.py           # Константы и парсинг рецептов
-├── data_manager.py        # Модуль работы с JSON, CSV и logging
-├── element.py             # Класс игрового элемента
-├── main.py                # Точка входа и главный игровой цикл
-└── README.md              # Документация проекта
+├── assets/                           # Папка с PNG иконками
+│
+├── py_bot/                           # Папка с Telegram-ботом
+│   ├── README.md                     # Документация бота
+│   ├── bot.py                        # Точка входа, хендлеры команд/callback, FSM
+│   ├── session.py                    # Stateless JSON-сессии по user_id (sessions/<id>.json)
+│   ├── analytics.py                  # Парсинг данных, рекорды, статистика, ачивки, верификация
+│   ├── keyboards.py                  # Инлайн-клавиатуры главного меню и управления
+│   ├── config.py                     # Токен бота, пути, параметры логирования
+│   └── sessions/                     # Директория изолированных сессий пользователей
+│
+├── recipes.json                      # Структура рецептов и стартовых элементов (JSON)
+├── game_flight.log                   # Автоматически создаваемый лог событий (LOG/TXT)
+├── session_stats.csv                 # Таблица рекордов и сессий (CSV)
+├── constants.py                      # Константы и парсинг рецептов
+├── data_manager.py                   # Модуль работы с JSON, CSV и logging
+├── element.py                        # Класс игрового элемента
+├── main.py                           # Точка входа и главный игровой цикл
+└── README.md                         # Документация проекта
 ```
 ## Скриншоты игры</h1>
 
